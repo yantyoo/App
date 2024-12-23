@@ -1,48 +1,49 @@
 * {
     box-sizing: border-box;
     margin: 0;
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "Pretendaed", sans-serif;
     src: url("../PretendardVariable.woff2") format("woff2");
-  }
-  
-  body {
+}
+
+body {
     font-family: "Pretendaed", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  main {
+}
+
+main {
     width: 360px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
     color: black;
-  }
-  .test-logo {
+}
+
+.test-logo {
     width: 222px;
     margin-top: 55px;
     margin-bottom: 80px;
-  }
-  
-  main h1 {
+}
+
+main h1 {
     font-size: 30px;
     font-weight: 700;
     left: 0;
     align-self: flex-start;
     margin-left: 30px;
     margin-bottom: 25px;
-  }
-  
-  .mail,
-  .password {
+}
+
+.mail,
+.password {
     width: 300px;
     height: 44px;
     margin-bottom: 20px;
@@ -51,43 +52,43 @@
     padding-left: 15px;
     font-size: 14px;
     font-weight: 400;
-  }
-  
-  .mail:focus,
-  .password:focus {
+}
+
+.mail:focus,
+.password:focus {
     outline: none;
     border-color: #1dd479;
     box-shadow: 1px 1px 8px 0 rgba(29, 212, 121, 0.25);
-  }
-  
-  .mail::placeholder,
-  .password::placeholder {
+}
+
+.mail::placeholder,
+.password::placeholder {
     color: #878787;
     font-size: 14px;
     font-weight: 400;
-  }
-  
-  .logsave {
+}
+
+.logsave {
     display: flex;
     margin-bottom: 33px;
     align-items: center;
-  }
-  
-  .save-id {
+}
+
+.save-id {
     width: 12px;
     height: 12px;
     border: 1px solid black;
     border-radius: 3px;
     cursor: pointer;
     margin-right: 9px;
-  }
-  
-  .logsave label {
+}
+
+.logsave label {
     font-size: 13px;
     margin-top: 2px;
-  }
-  
-  .log-button {
+}
+
+.log-button {
     width: 300px;
     height: 44px;
     border: none;
@@ -98,77 +99,77 @@
     padding-top: 4px;
     margin-bottom: 15px;
     background-color: #1dd479;
-  }
-  
-  .log-button:hover {
+}
+
+.log-button:hover {
     background-color: #10b462;
-  }
-  
-  .log-button:active {
+}
+
+.log-button:active {
     background-color: #10b462;
     color: #e4e4e4;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-  }
-  
-  .log-sub {
+}
+
+.log-sub {
     width: 300px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 36px;
-  }
-  
-  .log-sub p {
+}
+
+.log-sub p {
     font-size: 13px;
     font-weight: 400;
-  }
-  
-  .log-sub p:hover {
+}
+
+.log-sub p:hover {
     font-weight: bold;
-  }
-  
-  .id-search {
+}
+
+.id-search {
     text-decoration: underline;
     text-underline-position: under;
-  }
-  
-  .sns-log {
+}
+
+.sns-log {
     width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
-  }
-  
-  .sns-log p {
+}
+
+.sns-log p {
     font-size: 13px;
     font-weight: 400;
     color: #878787;
-  }
-  
-  hr {
+}
+
+hr {
     width: 90px;
     height: 1px;
     background-color: #878787;
     border: 0px;
-  }
-  
-  .sns-logo {
+}
+
+.sns-logo {
     width: 360px;
     display: flex;
     justify-content: space-between;
-  }
-  
-  .kakao-logo {
+}
+
+.kakao-logo {
     margin-left: 60px;
-  }
-  
-  .google-logo {
+}
+
+.google-logo {
     margin-right: 60px;
-  }
-  
-  .kakao-logo:hover,
-  .naver-logo:hover,
-  .google-logo:hover {
+}
+
+.kakao-logo:hover,
+.naver-logo:hover,
+.google-logo:hover {
     border-radius: 50%;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
-  }
+}

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Pretendaed", sans-serif;
+    src: url("../PretendardVariable.woff2") format("woff2");
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    overflow-y: scroll
+}
