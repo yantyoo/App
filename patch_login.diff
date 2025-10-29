@@ -1,0 +1,169 @@
+*** Update File: src/App.tsx
+@@
+-const formatMonthLabel = (date: Date) =>
+-  `${date.getFullYear()}/${date.getMonth() + 1}`;
++const formatMonthLabel = (date: Date) =>
++  `${date.getFullYear()}/${date.getMonth() + 1}`;
+@@
+-  const [users, setUsers] = useState<User[]>(() => storage.users.load());
++  const [users, setUsers] = useState<User[]>(() => storage.users.load());
+@@
+-  const [mapCenter, setMapCenter] = useState<LatLngTuple>([37.5665, 126.978]);
+-  const menuRef = useRef<HTMLDivElement | null>(null);
++  const [mapCenter, setMapCenter] = useState<LatLngTuple>([37.5665, 126.978]);
++  const menuRef = useRef<HTMLDivElement | null>(null);
++  const seededUsersRef = useRef(false);
+@@
+-  useEffect(() => storage.users.save(users), [users]);
++  useEffect(() => storage.users.save(users), [users]);
++
++  useEffect(() => {
++    if (seededUsersRef.current) return;
++    if (users.length === 0) {
++      const defaultUser: User = {
++        id: crypto.randomUUID(),
++        name: "Demo User",
++        email: "1234",
++        password: "1234",
++      };
++      setUsers([defaultUser]);
++    }
++    seededUsersRef.current = true;
++  }, [users]);
+@@
+-    const trimmedEmail = signupForm.email.trim().toLowerCase();
++    const trimmedEmail = signupForm.email.trim();
+@@
+-    const trimmedEmail = loginForm.email.trim().toLowerCase();
++    const trimmedEmail = loginForm.email.trim();
+@@
+-          <div className="tab-switch">
+-            <button
+-              type="button"
+-              className={authMode === "login" ? "tab active" : "tab"}
+-              onClick={() => {
+-                setAuthMode("login");
+-                setError(null);
+-                setSuccessMessage(null);
+-              }}
+-            >
+-              ??¥á???
+-            </button>
+-            <button
+-              type="button"
+-              className={authMode === "signup" ? "tab active" : "tab"}
+-              onClick={() => {
+-                setAuthMode("signup");
+-                setError(null);
+-                setSuccessMessage(null);
+-              }}
+-            >
+-              ???????
+-            </button>
+-          </div>
++          <div className="tab-switch">
++            {authMode === "login" ? (
++              <>
++                <span className="tab active">Login</span>
++                <button
++                  type="button"
++                  className="tab"
++                  onClick={() => {
++                    setAuthMode("signup");
++                    setError(null);
++                    setSuccessMessage(null);
++                  }}
++                >
++                  Sign Up
++                </button>
++              </>
++            ) : (
++              <>
++                <button
++                  type="button"
++                  className="tab"
++                  onClick={() => {
++                    setAuthMode("login");
++                    setError(null);
++                    setSuccessMessage(null);
++                  }}
++                >
++                  Login
++                </button>
++                <span className="tab active">Sign Up</span>
++              </>
++            )}
++          </div>
+@@
+-            <form className="form" onSubmit={handleSignup}>
++            <form className="form" onSubmit={handleSignup}>
+               <label className="input-field">
+-                ???
++                Name
+                 <input
+                   type="text"
+                   value={signupForm.name}
+                   onChange={(e) => handleSignupChange("name", e.target.value)}
+-                  placeholder="????? ????????"
++                  placeholder="Enter display name"
+                 />
+               </label>
+               <label className="input-field">
+-                ?????
++                User ID
+                 <input
+-                  type="email"
++                  type="text"
+                   value={signupForm.email}
+                   onChange={(e) => handleSignupChange("email", e.target.value)}
+-                  placeholder="example@email.com"
++                  placeholder="e.g. 1234"
+                 />
+               </label>
+               <label className="input-field">
+-                ??¬Û??
++                Password
+                 <input
+                   type="password"
+                   value={signupForm.password}
+                   onChange={(e) => handleSignupChange("password", e.target.value)}
+-                  placeholder="6?? ??? ????????"
++                  placeholder="At least 6 characters"
+                 />
+               </label>
+               <button type="submit" className="primary-button">
+-                ??????? ???????
++                Sign up and start
+               </button>
+             </form>
+           ) : (
+             <form className="form" onSubmit={handleLogin}>
+               <label className="input-field">
+-                ?????
++                User ID
+                 <input
+-                  type="email"
++                  type="text"
+                   value={loginForm.email}
+                   onChange={(e) => handleLoginChange("email", e.target.value)}
+-                  placeholder="?????? ?????"
++                  placeholder="Enter your ID"
+                 />
+               </label>
+               <label className="input-field">
+-                ??¬Û??
++                Password
+                 <input
+                   type="password"
+                   value={loginForm.password}
+                   onChange={(e) => handleLoginChange("password", e.target.value)}
+-                  placeholder="??¬Û??"
++                  placeholder="Enter your password"
+                 />
+               </label>
+               <button type="submit" className="primary-button">
+-                ??¥á???
++                Login
+               </button>
+             </form>
+*** End Patch
